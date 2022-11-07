@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./css/modern-normalize.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +31,9 @@
               <a class="header-link" href="./index.html">Студія</a>
             </li>
             <li class="header-li list">
-              <a class="header-link" href="./portfolio.html">Портфоліо</a>
+              <a class="header-link current" href="./portfolio.html"
+                >Портфоліо</a
+              >
             </li>
             <li class="header-li list">
               <a class="header-link" href="#contacts">Контакти</a>
@@ -83,13 +90,20 @@
           <ul class="img-section list">
             <li class="img-portfolio">
               <a class="a-img-portfolio" href="#">
-                <img
-                  src="./images/img8.jpg"
-                  alt="Веб-сайт відкритий на компьютері"
-                />
+                <div class="img-text-wrap">
+                  <img
+                    src="./images/img8.jpg"
+                    alt="Веб-сайт відкритий на компьютері"
+                  />
+                  <p class="top-text">
+                    Ресурс пропонує комплексні пропозиції з різним рівнем
+                    функціоналу та сервісів. Все це дозволить відвідувачу
+                    отримати вичерпні відомості про компанію чи приватну особу.
+                  </p>
+                </div>
                 <div class="img-div">
-                  <h3>Технокряк</h3>
-                  <p>Веб-сайт</p>
+                  <h3 class="img-h3">Технокряк</h3>
+                  <p class="img-p">Веб-сайт</p>
                 </div>
               </a>
             </li>
@@ -97,8 +111,8 @@
               <a class="a-img-portfolio" href="#">
                 <img src="./images/img9.jpg" alt="Хлопці грають в баскетбол" />
                 <div class="img-div">
-                  <h3>Постер New Orlean vs Golden Star</h3>
-                  <p>Дизайн</p>
+                  <h3 class="img-h3">Постер New Orlean vs Golden Star</h3>
+                  <p class="img-p">Дизайн</p>
                 </div>
               </a>
             </li>
@@ -106,8 +120,8 @@
               <a class="a-img-portfolio" href="#">
                 <img src="./images/img10.jpg" alt="Логотип ресторану" />
                 <div class="img-div">
-                  <h3>Ресторан Seafood</h3>
-                  <p>Додаток</p>
+                  <h3 class="img-h3">Ресторан Seafood</h3>
+                  <p class="img-p">Додаток</p>
                 </div>
               </a>
             </li>
@@ -115,8 +129,8 @@
               <a class="a-img-portfolio" href="#">
                 <img src="./images/img11.jpg" alt="Навушники" />
                 <div class="img-div">
-                  <h3>Проєкт Prime</h3>
-                  <p>Маркетинг</p>
+                  <h3 class="img-h3">Проєкт Prime</h3>
+                  <p class="img-p">Маркетинг</p>
                 </div>
               </a>
             </li>
@@ -124,8 +138,8 @@
               <a class="a-img-portfolio" href="#">
                 <img src="./images/img12.jpg" alt="Дві коробки" />
                 <div class="img-div">
-                  <h3>Проєкт Boxes</h3>
-                  <p>Додаток</p>
+                  <h3 class="img-h3">Проєкт Boxes</h3>
+                  <p class="img-p">Додаток</p>
                 </div>
               </a>
             </li>
@@ -136,8 +150,8 @@
                   alt="Веб-сайт відкритий на екрані компьютера"
                 />
                 <div class="img-div">
-                  <h3>Inspiration has no Borders</h3>
-                  <p>Веб-сайт</p>
+                  <h3 class="img-h3">Inspiration has no Borders</h3>
+                  <p class="img-p">Веб-сайт</p>
                 </div>
               </a>
             </li>
@@ -145,8 +159,8 @@
               <a class="a-img-portfolio" href="#">
                 <img src="./images/img14.jpg" alt="Журнал" />
                 <div class="img-div">
-                  <h3>Видання Limited Edition</h3>
-                  <p>Дизайн</p>
+                  <h3 class="img-h3">Видання Limited Edition</h3>
+                  <p class="img-p">Дизайн</p>
                 </div>
               </a>
             </li>
@@ -154,8 +168,8 @@
               <a class="a-img-portfolio" href="#">
                 <img src="./images/img15.jpg" alt="Бірка з написом" />
                 <div class="img-div">
-                  <h3>Проєкт LAB</h3>
-                  <p>Маркетинг</p>
+                  <h3 class="img-h3">Проєкт LAB</h3>
+                  <p class="img-p">Маркетинг</p>
                 </div>
               </a>
             </li>
@@ -166,8 +180,8 @@
                   alt="Веб-сайт відкритий на ноутбуці"
                 />
                 <div class="img-div">
-                  <h3>Growing Business</h3>
-                  <p>Додаток</p>
+                  <h3 class="img-h3">Growing Business</h3>
+                  <p class="img-p">Додаток</p>
                 </div>
               </a>
             </li>
@@ -260,5 +274,10 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

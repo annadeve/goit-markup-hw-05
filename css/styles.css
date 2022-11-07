@@ -66,17 +66,30 @@ img {
 }
 
 .header-link {
+  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: #212121;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
 .header-link:focus {
   color: #2196f3;
+}
+
+.current::after {
+  position: absolute;
+  content: '';
+  margin-top: 46px;
+  left: 0;
+  background-color: #2196F3;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
 }
 
 .header-nav {
@@ -104,6 +117,8 @@ img {
   letter-spacing: 0.02em;
   color: #757575;
   text-decoration: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -356,6 +371,10 @@ p {
   margin-bottom: 10px;
 }
 
+/* .a-img-portfolio {
+  position: relative;
+} */
+
 .a-img-portfolio>h3 {
   font-weight: 700;
   font-size: 18px;
@@ -390,6 +409,29 @@ p {
   gap: 30px;
   padding-bottom: 94px;
 }
+
+.img-ul>li {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 27px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16/14);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: rgba(47, 48, 58, 0.8);
+  height: 70px;
+  width: 370px;
+}
+
 
 .team-section {
   padding-top: 94px;
@@ -474,10 +516,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-soc {
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -520,6 +564,7 @@ p {
   justify-content: center;
   border-radius: 4px;
   border: 1px solid #AFB1B8;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -528,6 +573,7 @@ p {
   align-items: center;
   justify-content: center;
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -642,9 +688,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-footer {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #fff;
 }
 
@@ -688,6 +736,9 @@ footer {
   border-radius: 4px;
   border: none;
   padding: 6px 22px;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-main-section:hover,
@@ -709,6 +760,7 @@ footer {
 
 .img-portfolio {
   width: 370px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .img-portfolio:hover,
@@ -722,7 +774,7 @@ footer {
   font-style: normal;
 }
 
-.img-portfolio>a>.img-div>h3 {
+.img-h3 {
   font-family: "Roboto";
   text-decoration: none;
   font-style: normal;
@@ -734,7 +786,7 @@ footer {
   color: #212121;
 }
 
-.img-portfolio>a>.img-div>p {
+.img-p {
   font-family: "Roboto";
   text-decoration: none;
   font-style: normal;
@@ -750,6 +802,31 @@ footer {
   padding: 24px 20px;
 }
 
+.img-text-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.top-text {
+  position: absolute;
+  top: 0;
+  padding: 27px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(28/18);
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  background: rgba(33, 150, 243, 0.9);
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-portfolio:hover .top-text {
+  transform: translateY(0);
+}
+
 /* прячу заголовок */
 h2.visually-hidden {
   position: absolute;
@@ -758,9 +835,57 @@ h2.visually-hidden {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  ;
+
+}
+
+.modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
